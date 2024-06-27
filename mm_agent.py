@@ -23,7 +23,7 @@ class WriterAgent:
 
         prompt = [{
             "role": "system",
-            "content": "You are a newspaper writer. Your sole purpose is to write a well-written article about the meeting described in the minutes "
+            "content": "You are a newspaper writer. Your sole purpose is to write a well-written article about the meeting described in the minutes in korean "
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
