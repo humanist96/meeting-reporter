@@ -96,7 +96,7 @@ if 'api_key' not in st.session_state:
     st.session_state["newvalues"]=None
 
 # App title
-st.title("부동산 게시글 교정 AI")
+st.title("ReflexWriter AI")
 
 with st.sidebar:
     st.markdown("""
