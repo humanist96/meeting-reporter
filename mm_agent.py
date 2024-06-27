@@ -57,7 +57,7 @@ class WriterAgent:
         prompt = [{
             "role": "system",
             "content": "You are a newspaper editor. Your sole purpose is to edit a well-written article about a "
-                       "topic based on given critique\n "
+                       "topic based on given critique in korean\n "
         }, {
             "role": "user",
             "content": f"{str(article)}\n"
@@ -98,7 +98,7 @@ class CritiqueAgent:
         prompt = [{
             "role": "system",
             "content": "You are a newspaper writing critique. Your sole purpose is to provide short feedback on a written "
-                       "article so the writer will know what to fix.\n "
+                       "article so the writer will know what to fix in korean\n "
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
