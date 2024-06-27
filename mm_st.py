@@ -56,7 +56,7 @@ def process_form(form_number,article):
         st.title(header)
         
         # Instructions (if any)
-        instruction_text = "You can edit either the article or the critique.\n Clear the critique to use the article as displayed. "
+        instruction_text = "글 또는 비평 중 하나를 편집할 수 있습니다.\n 비평을 선택 취소하면 표시된 대로 글을 사용할 수 있습니다. "
         if instruction_text:
             st.write(instruction_text)
         
@@ -100,24 +100,24 @@ st.title("Human-In-The-Loop AI Collaboration with Reflection Agent")
 
 with st.sidebar:
     st.markdown("""
-### What it's all about:
+### 내용 소개:
 
-    This application demonstrates
-    how artificial intelligence
-    agents and a human (you) can
-    collaborate on a task.
+    이 애플리케이션은
+    인공 지능 에이전트와 
+    사람(사용자)이 어떻게
+    어떻게 협업할 수 있는지 보여줍니다.
     
-    Today's task is to write a news
-    article about a meeting for 
-    which a text transcript or 
-    minutes are available.
+    오늘의 과제는 회의에 대한 뉴스
+    회의에 대한 기사 
+    회의에 대한 뉴스 기사를 작성하는 것입니다. 
+    회의록을 사용할 수 있습니다.
     
-    You point to that source;
-    the writer agent drafts;
-    the critique agent critiques;
-    you can edit either the draft or
-    the critique. This repeats until
-    you are satisfied with a draft.
+    해당 소스를 가리킵니다;
+    작가 에이전트가 초안을 작성합니다;
+    비평 에이전트가 비평합니다;
+    초안 또는
+    비평을 편집할 수 있습니다. 이 과정은 초안에 만족할 때까지
+    초안에 만족할 때까지 반복됩니다.
     v0.0.4
 """)
 
@@ -125,18 +125,11 @@ with st.sidebar:
 
 if not st.session_state.api_key:
     #with st.sidebar:
-    api_key=st.text_input("Enter your ChatGPT API key (Tier 1 or higher account) to get started:", type="password")
-    st.markdown("You can also use the custom GPT version free without an API key or a paid subscription by clicking [here](https://chatgpt.com/g/g-roNR24Ty6-collaborative-meeting-reporter).",
-                unsafe_allow_html=True)
+    api_key=st.text_input("시작하려면 ChatGPT API 키를 입력하세요.:", type="password")
+
     if api_key:
         st.session_state['api_key'] =api_key
         st.rerun()
-with st.sidebar:
-    st.markdown("[custom GPT Version](https://chatgpt.com/g/g-roNR24Ty6-collaborative-meeting-reporter)", unsafe_allow_html=True)
-    st.markdown("[feature requests](https://github.com/tevslin/meeting-reporter/discussions)", unsafe_allow_html=True)
-    st.markdown("[bug reports](https://github.com/tevslin/meeting-reporter/issues)", unsafe_allow_html=True)
-    st.markdown("[source code](https://github.com/tevslin/meeting-reporter)", unsafe_allow_html=True)
-    st.markdown("[blog post](https://blog.tomevslin.com/2024/04/human-in-the-loop-artificial-intelligence.html)", unsafe_allow_html=True)    
 
 if st.session_state['api_key'] and st.session_state["dm"] is None:
     os.environ['OPENAI_API_KEY'] = st.session_state['api_key']
