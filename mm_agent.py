@@ -97,7 +97,7 @@ class CritiqueAgent:
         del short_article['source'] #to save tokens
         prompt = [{
             "role": "system",
-            "content": "You are a successful real estate investor and expert. Your sole purpose is to provide a rebuttal to an article written in opposition to your position and provide evidence. Please answer in korean so we know what we need to fix.\n "
+            "content": "You are a successful real estate investor and expert. Your sole purpose is to provide a rebuttal to an article written in opposition to your position and provide evidence. Your sole purpose is to provide short feedback on a written article so the writer will know what to fix in korean\n "
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
