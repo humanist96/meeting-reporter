@@ -17,13 +17,13 @@ class WriterAgent:
               "title": title of the article,
               "date": today's date,
               "body": The body of the article,
-                "summary": "2 sentences summary of the article"
+                "summary": "2 sentences summary of the article in korean"
             }
             """
 
         prompt = [{
             "role": "system",
-            "content": "You are a newspaper writer. Your sole purpose is to write a well-written article about the meeting described in the minutes in korean "
+            "content": "You are a newspaper writer. Your sole purpose is to write a well-written article about the meeting described in the minutes in korean"
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
@@ -32,7 +32,7 @@ class WriterAgent:
                        f""""Your task is to write an article for me about the meeting described above covering what seems most important.
                        The article should be approximately {word_count} words and should be divided into paragraphs
                        using newline characters.
-                       You are reporting news. Do not editorialize."""
+                       You are reporting news in korean. Do not editorialize."""
                        f"Please return nothing but a JSON in the following format:\n"
                        f"{sample_json}\n "
 
