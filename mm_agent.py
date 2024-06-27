@@ -23,7 +23,7 @@ class WriterAgent:
 
         prompt = [{
             "role": "system",
-            "content": "You are a newspaper writer. Your sole purpose is to write a well-written article about the meeting described in the minutes in korean"
+            "content": "You are a real estate investor and an expert. Your sole purpose is to understand the content well and use your knowledge to the best of your ability to write a real estate outlook article in Korean."
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
@@ -56,7 +56,7 @@ class WriterAgent:
             """
         prompt = [{
             "role": "system",
-            "content": "You are a newspaper editor. Your sole purpose is to edit a well-written article about a "
+            "content": "You're a successful real estate investor and expert. Your sole purpose is to edit a well-written article about a "
                        "topic based on given critique in korean\n "
         }, {
             "role": "user",
@@ -97,7 +97,7 @@ class CritiqueAgent:
         del short_article['source'] #to save tokens
         prompt = [{
             "role": "system",
-            "content": "You are a newspaper writing critique. Your sole purpose is to provide short feedback on a written "
+            "content": "You're a successful real estate investor and expert. Your sole purpose is to provide short feedback on a written "
                        "article so the writer will know what to fix in korean\n "
         }, {
             "role": "user",
