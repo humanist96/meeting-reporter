@@ -96,7 +96,7 @@ if 'api_key' not in st.session_state:
     st.session_state["newvalues"]=None
 
 # App title
-st.title("Human-In-The-Loop AI Collaboration with Reflection Agent")
+st.title("AI와 함께 부동산 전망하기")
 
 with st.sidebar:
     st.markdown("""
@@ -106,19 +106,18 @@ with st.sidebar:
     인공 지능 에이전트와 
     사람(사용자)이 어떻게
     어떻게 협업할 수 있는지 보여줍니다.
+
+    우리의 목표는
+    부동산 전망 뉴스에 대하여 
+    전망 뉴스를 더 객관화하고 
+    보완하여 재작성하는 것입니다. 
     
-    오늘의 과제는 회의에 대한 뉴스
-    회의에 대한 기사 
-    회의에 대한 뉴스 기사를 작성하는 것입니다. 
-    회의록을 사용할 수 있습니다.
-    
-    해당 소스를 가리킵니다;
     작가 에이전트가 초안을 작성합니다;
     비평 에이전트가 비평합니다;
-    초안 또는
-    비평을 편집할 수 있습니다. 이 과정은 초안에 만족할 때까지
+    초안 또는 비평을 편집할 수 있습니다. 
+    이 과정은 초안에 만족할 때까지
     초안에 만족할 때까지 반복됩니다.
-    v0.0.4
+    v0.0.1
 """)
 
 # Sidebar for API key input
