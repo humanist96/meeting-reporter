@@ -23,16 +23,22 @@ class WriterAgent:
 
         prompt = [{
             "role": "system",
-            "content": "You are a real estate investor and an expert. Your sole purpose is to understand the content well and use your knowledge to the best of your ability to write a real estate outlook article in Korean."
+            "content": "귀하는 부동산 투자자이자 전문가입니다. 여러분의 유일한 목적은 질문을 잘 이해하고 지식을 최대한 활용하여 부동산 검색 키워드를 한글로 추출하는 것입니다. 추출한 키워드는 주로 아래 처럼 표현해 주세요."
         }, {
             "role": "user",
             "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
 
                        f"{the_text}\n"
-                       f""""Your task is to write an article for me about the meeting described above covering what seems most important.
-                       The article should be approximately {word_count} words and should be divided into paragraphs
-                       using newline characters.
-                       You are reporting news in korean. Do not editorialize."""
+                       f""""
+예시는 다음과 같다.
+[입력]
+강남구에 역세권이며 500세대 이상의 대단지이며 공원이 가까운 곳 찾아줘
+
+[출력]
+- 지역 : 서울시 강남구
+- 특징 : 역세권, 500세대, 대단지, 공원
+- 가격(만원) : 80000
+- 평형(m**2) : 20평대 """
                        f"Please return nothing but a JSON in the following format:\n"
                        f"{sample_json}\n "
 
